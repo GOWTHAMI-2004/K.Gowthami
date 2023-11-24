@@ -1,0 +1,28 @@
+def subtract_numbers():
+    try:
+        num1 = float(entry1.get())
+        num2 = float(entry2.get())
+        result = num1 - num2
+        result_label.config(text=f"Result: {result}")
+    except ValueError:
+        result_label.config(text="Please enter valid numbers")
+
+# Create the main window
+root = tk.Tk()
+root.title("Subtraction Application")
+
+# Entry fields for numbers
+entry1 = tk.Entry(root)
+entry1.pack()
+entry2 = tk.Entry(root)
+entry2.pack()
+
+# Button to trigger subtraction
+subtract_button = tk.Button(root, text="Subtract", command=subtract_numbers)
+subtract_button.pack()
+
+# Label to display result
+result_label = tk.Label(root)
+result_label.pack()
+
+root.mainloop()
